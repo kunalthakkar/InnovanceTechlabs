@@ -1,0 +1,194 @@
+<section class="hero-slider">
+  <div
+  class="slide fade"
+  [ngStyle]="{
+    'background-image': 'url(' + slides[currentSlide].image + ')'
+  }"
+>
+
+   <div class="slide">
+
+  <img
+    [src]="slides[currentSlide].image"
+    [alt]="slides[currentSlide].title"
+    class="slide-image"
+  />
+
+  <div class="overlay">
+
+    <div class="content">
+      <h1>{{ slides[currentSlide].title }}</h1>
+      <p>{{ slides[currentSlide].description }}</p>
+    </div>
+
+  </div>
+
+</div>
+
+  </div>
+
+  <!-- Previous Button -->
+  <button
+    class="nav-btn prev"
+    (click)="previousSlide()"
+  >
+    ❮
+  </button>
+
+  <!-- Next Button -->
+  <button
+    class="nav-btn next"
+    (click)="nextSlide()"
+  >
+    ❯
+  </button>
+
+  <!-- Dots -->
+  <div class="dots">
+
+    <span
+      *ngFor="let slide of slides; let i = index"
+      [class.active]="i === currentSlide"
+      (click)="goToSlide(i)"
+    >
+    </span>
+
+  </div>
+
+</section>
+
+<section class="services">
+
+  <div class="section-title">
+    <h2>What We Do</h2>
+    <p>End-to-end software development services.</p>
+  </div>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <h3>Custom Software Development</h3>
+      <p>
+        Enterprise-grade software tailored to your business needs.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <h3>Web Application Development</h3>
+      <p>
+        Responsive and scalable web applications using modern frameworks.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <h3>Cloud Solutions</h3>
+      <p>
+        Azure cloud deployment, migration and optimization.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <h3>API & Integration</h3>
+      <p>
+        Secure integrations connecting your business systems.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <h3>Microservices Architecture</h3>
+      <p>
+        High-performance scalable backend solutions.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <h3>Maintenance & Support</h3>
+      <p>
+        Continuous monitoring and application support.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="stats">
+
+  <div class="stat">
+    <h2>10+</h2>
+    <p>Years Experience</p>
+  </div>
+
+  <div class="stat">
+    <h2>50+</h2>
+    <p>Projects Delivered</p>
+  </div>
+
+  <div class="stat">
+    <h2>20+</h2>
+    <p>Technologies</p>
+  </div>
+
+  <div class="stat">
+    <h2>100%</h2>
+    <p>Commitment</p>
+  </div>
+
+</section>
+
+<section class="technology-section">
+
+  <div class="container">
+
+    <span class="section-tag">
+      TECHNOLOGY EXPERTISE
+    </span>
+
+    <h2>
+      Modern Technologies We Work With
+    </h2>
+
+    <p>
+      Building enterprise-grade applications using
+      trusted technologies and industry best practices.
+    </p>
+
+    <div class="tech-grid">
+
+      <div
+        class="tech-card"
+        *ngFor="let tech of technologies">
+
+        <img
+          [src]="tech.image"
+          [alt]="tech.name">
+
+        <h3>
+          {{ tech.name }}
+        </h3>
+
+        <span>
+          {{ tech.category }}
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="cta">
+
+  <h2>Let's Build Something Great Together</h2>
+
+  <p>
+    Looking for a reliable technology partner?
+  </p>
+
+  <button class="btn-primary">
+    Contact Us
+  </button>
+
+</section>

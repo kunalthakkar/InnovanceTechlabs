@@ -1,0 +1,102 @@
+<section class="hero">
+
+  <div class="container">
+
+    <span class="tag">
+      OUR SERVICES
+    </span>
+
+    <h1>
+      Technology Solutions
+      Built For Growth
+    </h1>
+
+    <p>
+      We help organizations transform ideas into scalable
+      software solutions using modern technologies and
+      enterprise best practices.
+    </p>
+
+  </div>
+
+</section>
+
+<section class="services-section">
+
+  <div class="container">
+
+    <div class="service-grid">
+
+      <div
+        class="service-card"
+        *ngFor="let service of services">
+
+        <div class="icon">
+          {{service.icon}}
+        </div>
+
+        <h3>
+          {{service.title}}
+        </h3>
+
+        <p>
+          {{service.description}}
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="process-section">
+
+  <div class="container">
+
+    <h2>
+      Our Development Process
+    </h2>
+
+    <div class="process-grid">
+
+      <div
+        class="process-card"
+        *ngFor="let step of process; let i = index">
+
+        <div class="number">
+          0{{i+1}}
+        </div>
+
+        <h3>
+          {{step}}
+        </h3>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="cta">
+
+  <div class="container">
+
+    <h2>
+      Ready To Build Your Next Solution?
+    </h2>
+
+    <p>
+      Let's discuss how Innovance Techlabs can help your business grow.
+    </p>
+
+    <button class="primary-btn">
+      Contact Us
+    </button>
+
+  </div>
+
+</section>

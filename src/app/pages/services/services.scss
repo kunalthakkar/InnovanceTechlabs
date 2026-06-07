@@ -1,0 +1,206 @@
+.container {
+  width: 90%;
+  max-width: 1280px;
+  margin: auto;
+}
+
+section {
+  padding: 100px 0;
+}
+
+.tag {
+  color: #4aa8c7;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+
+.hero {
+  text-align: center;
+
+  background:
+  linear-gradient(
+    135deg,
+    #ffffff,
+    #f5fbff
+  );
+}
+
+.hero h1 {
+  font-size: 64px;
+  color: #003b73;
+  margin: 20px 0;
+}
+
+.hero p {
+  max-width: 800px;
+  margin: auto;
+  color: #64748b;
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+.service-grid {
+
+  display: grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(320px,1fr));
+
+  gap: 30px;
+}
+
+.service-card {
+
+  background: white;
+
+  border-radius: 24px;
+
+  padding: 35px;
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,.06);
+
+  transition: .3s;
+}
+
+.service-card:hover {
+
+  transform: translateY(-10px);
+}
+
+.icon {
+
+  font-size: 42px;
+
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+
+  color: #003b73;
+}
+
+.service-card p {
+
+  color: #64748b;
+  line-height: 1.8;
+}
+
+.process-section {
+
+  background: #f8fbff;
+}
+
+.process-section h2,
+.tech-section h2,
+.cta h2 {
+
+  text-align: center;
+
+  color: #003b73;
+
+  margin-bottom: 50px;
+}
+
+.process-grid {
+
+  display: grid;
+
+  grid-template-columns:
+  repeat(6,1fr);
+
+  gap: 20px;
+}
+
+.process-card {
+
+  background: white;
+
+  padding: 30px;
+
+  text-align: center;
+
+  border-radius: 20px;
+}
+
+.number {
+
+  color: #4aa8c7;
+
+  font-size: 28px;
+
+  font-weight: 700;
+}
+
+.tech-grid {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 15px;
+}
+
+.tech-grid span {
+
+  background: #f8fbff;
+
+  padding: 14px 22px;
+
+  border-radius: 30px;
+
+  color: #003b73;
+
+  font-weight: 600;
+}
+
+.cta {
+
+  background:
+  linear-gradient(
+    135deg,
+    #003b73,
+    #0a5d9a
+  );
+
+  color: white;
+
+  text-align: center;
+}
+
+.cta h2 {
+  color: white;
+}
+
+.primary-btn {
+
+  margin-top: 20px;
+
+  background: white;
+
+  color: #003b73;
+
+  border: none;
+
+  padding: 14px 28px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+}
+
+@media(max-width:991px){
+
+  .hero h1{
+    font-size:48px;
+  }
+
+  .process-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}

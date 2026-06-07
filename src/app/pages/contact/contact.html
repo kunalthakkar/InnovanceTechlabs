@@ -1,0 +1,58 @@
+<div class="contact-page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Contact Us</h1>
+    <p>Let’s build something amazing together</p>
+  </div>
+
+  <div class="container">
+
+    <!-- FORM -->
+    <div class="form-box">
+
+      <input placeholder="Full Name" [(ngModel)]="formData.name" />
+      <input placeholder="Email" [(ngModel)]="formData.email" />
+      <input placeholder="Phone" [(ngModel)]="formData.phone" />
+      <input placeholder="Company Name" [(ngModel)]="formData.company" />
+      <input placeholder="Subject" [(ngModel)]="formData.subject" />
+
+      <textarea placeholder="Message" rows="5"
+        [(ngModel)]="formData.message"></textarea>
+
+      <button (click)="sendEmail()" [disabled]="loading">
+        {{ loading ? 'Sending...' : 'Send Message' }}
+      </button>
+
+      <p class="msg">{{ successMessage }}</p>
+
+    </div>
+
+    <!-- INFO BOX -->
+    <div class="info-box">
+
+      <h3>Get in Touch</h3>
+
+      <p>📍 1201, Seventh Bliss, Gota, Ahmedabad</p>
+      <p>📧 innovancetechlabs@gmail.com</p>
+      <p>📞 +91 9725287818</p>
+
+      <!-- WhatsApp -->
+      <a class="whatsapp"
+         href="https://wa.me/919725287818"
+         target="_blank">
+        Chat on WhatsApp
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- MAP -->
+  <div class="map">
+    <iframe
+      src="https://www.google.com/maps?q=Seventh%20Bliss%20Gota%20Ahmedabad&output=embed">
+    </iframe>
+  </div>
+
+</div>
