@@ -36,6 +36,16 @@ ng build
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
+## Deploying to GitHub Pages
+
+This repository is set up to publish the Angular app to GitHub Pages for the custom domain in `CNAME`.
+
+1. In repository settings, enable Pages to use the `gh-pages` branch as the source.
+2. Push to `master` to trigger the deployment workflow.
+3. Keep `innovancetechlabs.com` in the `CNAME` file and make sure your DNS points the domain to GitHub Pages.
+
+The workflow also copies `index.html` to `404.html` so Angular routes continue to work after refresh.
+
 ## Running unit tests
 
 To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:

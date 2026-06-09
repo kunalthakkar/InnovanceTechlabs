@@ -30,6 +30,11 @@
                 "input": "public"
               },
               {
+                "glob": "CNAME",
+                "input": ".",
+                "output": "."
+              },
+              {
                 "glob": "**/*",
                 "input": "src/assets",
                 "output": "/assets"
