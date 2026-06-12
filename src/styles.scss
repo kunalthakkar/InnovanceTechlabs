@@ -4,19 +4,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --bg: #f4f7fb;
-  --bg-alt: #eaf0f8;
-  --surface: rgba(255, 255, 255, 0.88);
+  --bg: #f7fbfd;
+  --bg-alt: #edf7fa;
+  --surface: rgba(255, 255, 255, 0.9);
   --surface-solid: #ffffff;
-  --surface-strong: #0a1220;
-  --text: #102033;
-  --muted: #55657e;
-  --line: rgba(16, 32, 51, 0.12);
-  --primary: #0f3b7a;
-  --secondary: #0e87d8;
-  --accent: #f5a524;
-  --success: #0f8f66;
-  --shadow-soft: 0 14px 40px rgba(13, 31, 52, 0.08);
+  --surface-strong: #0b1e33;
+  --text: #13304d;
+  --muted: #597086;
+  --line: rgba(13, 62, 98, 0.12);
+  --primary: #0d4f7a;
+  --secondary: #48b7c7;
+  --accent: #7bd7df;
+  --success: #10846a;
+  --shadow-soft: 0 16px 42px rgba(13, 62, 98, 0.08);
   --radius-xl: 34px;
   --radius-lg: 24px;
 }
@@ -39,9 +39,9 @@ html {
 body {
   color-scheme: light;
   background:
-    radial-gradient(circle at top left, rgba(14, 135, 216, 0.12), transparent 26%),
-    radial-gradient(circle at right 12%, rgba(245, 165, 36, 0.10), transparent 22%),
-    linear-gradient(180deg, #ffffff 0%, var(--bg) 44%, #eef3fa 100%);
+    radial-gradient(circle at top left, rgba(72, 183, 199, 0.14), transparent 24%),
+    radial-gradient(circle at right 12%, rgba(13, 79, 122, 0.12), transparent 22%),
+    linear-gradient(180deg, #ffffff 0%, var(--bg) 46%, #eef8fb 100%);
   color: var(--text);
   font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
   margin: 0;
@@ -152,7 +152,7 @@ p {
 .cta-button {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: #fff;
-  box-shadow: 0 18px 40px rgba(15, 59, 122, 0.24);
+  box-shadow: 0 18px 40px rgba(13, 79, 122, 0.22);
 }
 
 .ghost-button {
@@ -165,6 +165,19 @@ p {
 .ghost-button:hover,
 .link-card:hover {
   transform: translateY(-2px);
+}
+
+.accent-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(72, 183, 199, 0.12);
+  border: 1px solid rgba(72, 183, 199, 0.22);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 800;
 }
 
 .cta-button:focus-visible,

@@ -17,7 +17,9 @@
 
 .founder-photo {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  max-width: 320px;
+  margin: 0 auto;
+  height: 280px;
   object-fit: cover;
 }
 
@@ -74,5 +76,9 @@
   .stats-grid,
   .capability-grid {
     grid-template-columns: 1fr;
+  }
+
+  .founder-photo {
+    height: 240px;
   }
 }
