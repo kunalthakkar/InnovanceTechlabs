@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule],
+  imports: [NgOptimizedImage],
   templateUrl: './about.html',
   styleUrls: ['./about.scss']
 })
@@ -36,5 +36,4 @@ export class AboutComponent {
       desc: 'Intelligent business automation solutions.'
     }
   ];
-
 }

@@ -1,59 +1,36 @@
-<div class="portfolio-page">
-
-  <!-- Header -->
-  <section class="hero">
-    <h1>Our Portfolio</h1>
-    <p>Showcasing projects we’ve built with modern technologies</p>
+<main class="page-shell portfolio-page section-pad">
+  <section class="glass-card intro-card">
+    <span class="section-label">Portfolio</span>
+    <h1 class="section-heading">Selected work across web, mobile and cloud.</h1>
+    <p class="section-copy">Search the work sample set or filter by delivery type.</p>
   </section>
 
-  <!-- Toolbar -->
-  <section class="toolbar">
-
-    <input
-      type="text"
-      placeholder="Search projects..."
-      [(ngModel)]="searchText"
-      class="search-box"
-    />
+  <section class="toolbar surface-card">
+    <input type="text" placeholder="Search projects..." [(ngModel)]="searchText" class="search-box" />
 
     <div class="filters">
-
       <button (click)="setCategory('All')" [class.active]="selectedCategory === 'All'">All</button>
       <button (click)="setCategory('Web')" [class.active]="selectedCategory === 'Web'">Web</button>
       <button (click)="setCategory('Mobile')" [class.active]="selectedCategory === 'Mobile'">Mobile</button>
       <button (click)="setCategory('Cloud')" [class.active]="selectedCategory === 'Cloud'">Cloud</button>
-
     </div>
-
   </section>
 
-  <!-- Result -->
-  <div class="result-info">
-    Showing {{ filteredProjects.length }} projects
-  </div>
+  <p class="result-info">Showing {{ filteredProjects.length }} projects</p>
 
-  <!-- Grid -->
   <section class="grid">
-
-    <div class="card" *ngFor="let project of filteredProjects">
-
-      <img [src]="project.image" [alt]="project.title" />
-
-      <h3>{{ project.title }}</h3>
-
-      <span class="badge">{{ project.category }}</span>
-
-      <p>{{ project.description }}</p>
-
-      <a class="btn" [href]="project.link">View Project</a>
-
-    </div>
-
+    @for (project of filteredProjects; track project.title) {
+      <article class="card surface-card">
+        <img [src]="project.image" [alt]="project.title" />
+        <h3>{{ project.title }}</h3>
+        <span class="badge">{{ project.category }}</span>
+        <p>{{ project.description }}</p>
+        <a class="btn" [href]="project.link">View project</a>
+      </article>
+    }
   </section>
 
-  <!-- Empty -->
-  <div class="empty" *ngIf="filteredProjects.length === 0">
-    No projects found 😕
-  </div>
-
-</div>
+  @if (filteredProjects.length === 0) {
+    <div class="empty">No projects found.</div>
+  }
+</main>

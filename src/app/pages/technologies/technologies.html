@@ -1,72 +1,34 @@
-<div class="tech-page">
-
-  <!-- Header -->
-  <section class="hero">
-    <h1>Technologies We Use</h1>
-    <p>Modern stack powering scalable enterprise solutions</p>
+<main class="page-shell tech-page section-pad">
+  <section class="glass-card intro-card">
+    <span class="section-label">Technologies</span>
+    <h1 class="section-heading">The stack behind the work.</h1>
+    <p class="section-copy">Filter the tools we use across front-end, back-end and cloud delivery.</p>
   </section>
 
-  <!-- Search + Filters Bar -->
-  <section class="toolbar">
-
-    <input
-      type="text"
-      placeholder="Search technology..."
-      [(ngModel)]="searchText"
-      class="search-box"
-    />
-
+  <section class="toolbar surface-card">
+    <input type="text" placeholder="Search technology..." [(ngModel)]="searchText" class="search-box" />
     <div class="filters">
-
-      <button (click)="setCategory('All')"
-        [class.active]="selectedCategory === 'All'">
-        All
-      </button>
-
-      <button (click)="setCategory('Frontend')"
-        [class.active]="selectedCategory === 'Frontend'">
-        Frontend
-      </button>
-
-      <button (click)="setCategory('Backend')"
-        [class.active]="selectedCategory === 'Backend'">
-        Backend
-      </button>
-
-      <button (click)="setCategory('Cloud')"
-        [class.active]="selectedCategory === 'Cloud'">
-        Cloud
-      </button>
-
+      <button (click)="setCategory('All')" [class.active]="selectedCategory === 'All'">All</button>
+      <button (click)="setCategory('Frontend')" [class.active]="selectedCategory === 'Frontend'">Frontend</button>
+      <button (click)="setCategory('Backend')" [class.active]="selectedCategory === 'Backend'">Backend</button>
+      <button (click)="setCategory('Cloud')" [class.active]="selectedCategory === 'Cloud'">Cloud</button>
     </div>
-
   </section>
 
-  <!-- Result Info -->
-  <div class="result-info">
-    Showing {{ filteredTechnologies.length }} technologies
-  </div>
+  <p class="result-info">Showing {{ filteredTechnologies.length }} technologies</p>
 
-  <!-- Grid -->
   <section class="grid">
-
-    <div class="card" *ngFor="let tech of filteredTechnologies">
-
-      <img [src]="tech.logo" [alt]="tech.name" />
-
-      <h3>{{ tech.name }}</h3>
-
-      <span class="badge">{{ tech.category }}</span>
-
-      <p>{{ tech.description }}</p>
-
-    </div>
-
+    @for (tech of filteredTechnologies; track tech.name) {
+      <article class="card surface-card">
+        <img [src]="tech.logo" [alt]="tech.name" />
+        <h3>{{ tech.name }}</h3>
+        <span class="badge">{{ tech.category }}</span>
+        <p>{{ tech.description }}</p>
+      </article>
+    }
   </section>
 
-  <!-- Empty State -->
-  <div class="empty" *ngIf="filteredTechnologies.length === 0">
-    No technologies found 😕
-  </div>
-
-</div>
+  @if (filteredTechnologies.length === 0) {
+    <div class="empty">No technologies found.</div>
+  }
+</main>

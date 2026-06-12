@@ -1,194 +1,236 @@
-<section class="hero-slider">
-  <div
-  class="slide fade"
-  [ngStyle]="{
-    'background-image': 'url(' + slides[currentSlide].image + ')'
-  }"
->
+<main class="home-page">
+  <section class="hero section-pad">
+    <div class="page-shell hero-grid">
+      <div class="hero-copy">
+        <span class="section-label">Ideas into intelligent products</span>
+        <h1>Design and ship software that feels premium, precise and ready to scale.</h1>
+        <p>
+          Innovance Techlabs builds web, mobile and AI-powered systems for teams that need strong
+          engineering judgment, not just more code.
+        </p>
 
-   <div class="slide">
+        <div class="hero-actions">
+          <a class="cta-button" routerLink="/contact">Get a free consultation</a>
+          <a class="ghost-button" routerLink="/portfolio">View selected work</a>
+        </div>
 
-  <img
-    [src]="slides[currentSlide].image"
-    [alt]="slides[currentSlide].title"
-    class="slide-image"
-  />
-
-  <div class="overlay">
-
-    <div class="content">
-      <h1>{{ slides[currentSlide].title }}</h1>
-      <p>{{ slides[currentSlide].description }}</p>
-    </div>
-
-  </div>
-
-</div>
-
-  </div>
-
-  <!-- Previous Button -->
-  <button
-    class="nav-btn prev"
-    (click)="previousSlide()"
-  >
-    ❮
-  </button>
-
-  <!-- Next Button -->
-  <button
-    class="nav-btn next"
-    (click)="nextSlide()"
-  >
-    ❯
-  </button>
-
-  <!-- Dots -->
-  <div class="dots">
-
-    <span
-      *ngFor="let slide of slides; let i = index"
-      [class.active]="i === currentSlide"
-      (click)="goToSlide(i)"
-    >
-    </span>
-
-  </div>
-
-</section>
-
-<section class="services">
-
-  <div class="section-title">
-    <h2>What We Do</h2>
-    <p>End-to-end software development services.</p>
-  </div>
-
-  <div class="services-grid">
-
-    <div class="service-card">
-      <h3>Custom Software Development</h3>
-      <p>
-        Enterprise-grade software tailored to your business needs.
-      </p>
-    </div>
-
-    <div class="service-card">
-      <h3>Web Application Development</h3>
-      <p>
-        Responsive and scalable web applications using modern frameworks.
-      </p>
-    </div>
-
-    <div class="service-card">
-      <h3>Cloud Solutions</h3>
-      <p>
-        Azure cloud deployment, migration and optimization.
-      </p>
-    </div>
-
-    <div class="service-card">
-      <h3>API & Integration</h3>
-      <p>
-        Secure integrations connecting your business systems.
-      </p>
-    </div>
-
-    <div class="service-card">
-      <h3>Microservices Architecture</h3>
-      <p>
-        High-performance scalable backend solutions.
-      </p>
-    </div>
-
-    <div class="service-card">
-      <h3>Maintenance & Support</h3>
-      <p>
-        Continuous monitoring and application support.
-      </p>
-    </div>
-
-  </div>
-
-</section>
-
-<section class="stats">
-
-  <div class="stat">
-    <h2>10+</h2>
-    <p>Years Experience</p>
-  </div>
-
-  <div class="stat">
-    <h2>50+</h2>
-    <p>Projects Delivered</p>
-  </div>
-
-  <div class="stat">
-    <h2>20+</h2>
-    <p>Technologies</p>
-  </div>
-
-  <div class="stat">
-    <h2>100%</h2>
-    <p>Commitment</p>
-  </div>
-
-</section>
-
-<section class="technology-section">
-
-  <div class="container">
-
-    <span class="section-tag">
-      TECHNOLOGY EXPERTISE
-    </span>
-
-    <h2>
-      Modern Technologies We Work With
-    </h2>
-
-    <p>
-      Building enterprise-grade applications using
-      trusted technologies and industry best practices.
-    </p>
-
-    <div class="tech-grid">
-
-      <div
-        class="tech-card"
-        *ngFor="let tech of technologies">
-
-        <img
-          [src]="tech.image"
-          [alt]="tech.name">
-
-        <h3>
-          {{ tech.name }}
-        </h3>
-
-        <span>
-          {{ tech.category }}
-        </span>
-
+        <div class="hero-metrics glass-card">
+          @for (stat of heroStats; track stat.label) {
+            <div class="metric">
+              <strong>{{ stat.value }}</strong>
+              <span>{{ stat.label }}</span>
+            </div>
+          }
+        </div>
       </div>
 
+      <aside class="hero-panel glass-card soft-grid" aria-label="Delivery summary">
+        <div class="panel-tag">Trusted delivery signals</div>
+        <div class="panel-stat">
+          <strong>500+</strong>
+          <span>Experts across product, design, cloud and AI disciplines</span>
+        </div>
+        <div class="panel-stat">
+          <strong>92+</strong>
+          <span>Countries supported through global delivery workflows</span>
+        </div>
+        <div class="panel-stat">
+          <strong>100%</strong>
+          <span>Delivery discipline built around quality and momentum</span>
+        </div>
+      </aside>
     </div>
+  </section>
 
-  </div>
+  <section class="trust-bar section-pad">
+    <div class="page-shell trust-card surface-card">
+      <span>Trusted by bold teams in health, finance, retail and operations</span>
+      <div class="trust-logos" aria-label="Representative client sectors">
+        <span>Healthcare</span>
+        <span>Fintech</span>
+        <span>Logistics</span>
+        <span>Retail</span>
+        <span>Education</span>
+        <span>Travel</span>
+      </div>
+    </div>
+  </section>
 
-</section>
+  <section id="services" class="section-pad">
+    <div class="page-shell section-stack">
+      <div class="section-head">
+        <span class="section-label">What we do</span>
+        <h2 class="section-heading">AI web and mobile development services.</h2>
+        <p class="section-copy">
+          The delivery stack is built to cover product design, execution and the systems around it.
+        </p>
+      </div>
 
-<section class="cta">
+      <div class="card-grid service-grid">
+        @for (service of services; track service.title) {
+          <article class="feature-card surface-card">
+            <h3>{{ service.title }}</h3>
+            <p>{{ service.description }}</p>
+            <div class="tag-row">
+              @for (tag of service.tags; track tag) {
+                <span>{{ tag }}</span>
+              }
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
 
-  <h2>Let's Build Something Great Together</h2>
+  <section class="section-pad alt-band">
+    <div class="page-shell section-stack">
+      <div class="section-head compact">
+        <span class="section-label">Capabilities</span>
+        <h2 class="section-heading">Advanced AI and engineering capabilities, productionised.</h2>
+      </div>
 
-  <p>
-    Looking for a reliable technology partner?
-  </p>
+      <div class="capability-layout">
+        @for (capability of capabilities; track capability.title) {
+          <article class="feature-card glass-card capability-card">
+            <h3>{{ capability.title }}</h3>
+            <p>{{ capability.description }}</p>
+            <div class="tag-row">
+              @for (tag of capability.tags; track tag) {
+                <span>{{ tag }}</span>
+              }
+            </div>
+          </article>
+        }
 
-  <button class="btn-primary">
-    Contact Us
-  </button>
+        <article class="feature-card hero-summary surface-card">
+          <span class="summary-kicker">12 capabilities · 1 partner</span>
+          <h3>One delivery team for product, AI and cloud execution.</h3>
+          <p>
+            A single accountable team keeps discovery, build, QA and rollout moving without handoff drag.
+          </p>
+          <a class="ghost-button" routerLink="/services">Explore the full service stack</a>
+        </article>
+      </div>
+    </div>
+  </section>
 
-</section>
+  <section class="section-pad">
+    <div class="page-shell section-stack">
+      <div class="section-head compact">
+        <span class="section-label">How we work</span>
+        <h2 class="section-heading">How we build AI-powered applications.</h2>
+      </div>
+
+      <div class="process-grid">
+        @for (item of process; track item.step) {
+          <article class="process-card surface-card">
+            <span class="process-step">{{ item.step }}</span>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="section-pad alt-band">
+    <div class="page-shell section-stack">
+      <div class="section-head">
+        <span class="section-label">Case studies</span>
+        <h2 class="section-heading">Real outcomes, not just polished demos.</h2>
+        <p class="section-copy">
+          Representative examples of the kind of product and operations work we ship for growth-minded teams.
+        </p>
+      </div>
+
+      <div class="case-grid">
+        @for (caseStudy of caseStudies; track caseStudy.title) {
+          <article class="case-card glass-card">
+            <span class="case-sector">{{ caseStudy.sector }}</span>
+            <h3>{{ caseStudy.title }}</h3>
+            <p>{{ caseStudy.summary }}</p>
+            <strong>{{ caseStudy.result }}</strong>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="page-shell section-stack">
+      <div class="section-head compact">
+        <span class="section-label">Industries</span>
+        <h2 class="section-heading">AI solutions for modern businesses.</h2>
+      </div>
+
+      <div class="industry-grid">
+        @for (industry of industries; track industry.name) {
+          <article class="industry-card surface-card">
+            <h3>{{ industry.name }}</h3>
+            <p>{{ industry.detail }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad alt-band">
+    <div class="page-shell quote-layout">
+      <div class="section-head">
+        <span class="section-label">Words from clients</span>
+        <h2 class="section-heading">Delivery that people remember.</h2>
+      </div>
+
+      <div class="testimonial-grid">
+        @for (testimonial of testimonials; track testimonial.author) {
+          <article class="testimonial-card surface-card">
+            <p>“{{ testimonial.quote }}”</p>
+            <strong>{{ testimonial.author }}</strong>
+            <span>{{ testimonial.role }}</span>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="page-shell faq-layout">
+      <div class="section-head">
+        <span class="section-label">Questions</span>
+        <h2 class="section-heading">Frequently asked questions.</h2>
+      </div>
+
+      <div class="faq-list">
+        @for (faq of faqs; track faq.question; let index = $index) {
+          <article class="faq-item surface-card">
+            <button type="button" class="faq-trigger" (click)="toggleFaq(index)">
+              <span>{{ faq.question }}</span>
+              <span class="faq-icon">{{ activeFaq() === index ? '−' : '+' }}</span>
+            </button>
+            @if (activeFaq() === index) {
+              <p>{{ faq.answer }}</p>
+            }
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad callout-band">
+    <div class="page-shell callout-card glass-card">
+      <div>
+        <span class="section-label">The invitation</span>
+        <h2 class="section-heading">Build intelligent applications with AI.</h2>
+        <p class="section-copy">
+          If you want a sharper product, better delivery habits and an execution partner that can move from idea to launch,
+          we should talk.
+        </p>
+      </div>
+
+      <div class="callout-actions">
+        <a class="cta-button" routerLink="/contact">Book a consultation</a>
+        <a class="ghost-button" href="mailto:innovancetechlabs@gmail.com">innovancetechlabs@gmail.com</a>
+      </div>
+    </div>
+  </section>
+</main>

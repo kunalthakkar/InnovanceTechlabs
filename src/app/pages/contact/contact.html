@@ -1,58 +1,32 @@
-<div class="contact-page">
+<main class="page-shell contact-page section-pad">
+  <section class="glass-card intro-card">
+    <span class="section-label">Contact</span>
+    <h1 class="section-heading">Build intelligent applications with AI.</h1>
+    <p class="section-copy">Tell us what you are trying to ship and we’ll help shape the fastest practical path forward.</p>
+  </section>
 
-  <!-- HERO -->
-  <div class="hero">
-    <h1>Contact Us</h1>
-    <p>Let’s build something amazing together</p>
-  </div>
-
-  <div class="container">
-
-    <!-- FORM -->
-    <div class="form-box">
-
-      <input placeholder="Full Name" [(ngModel)]="formData.name" />
-      <input placeholder="Email" [(ngModel)]="formData.email" />
-      <input placeholder="Phone" [(ngModel)]="formData.phone" />
-      <input placeholder="Company Name" [(ngModel)]="formData.company" />
-      <input placeholder="Subject" [(ngModel)]="formData.subject" />
-
-      <textarea placeholder="Message" rows="5"
-        [(ngModel)]="formData.message"></textarea>
-
-      <button (click)="sendEmail()" [disabled]="loading">
-        {{ loading ? 'Sending...' : 'Send Message' }}
-      </button>
-
+  <section class="contact-grid">
+    <form class="form-box surface-card" (ngSubmit)="sendEmail()">
+      <input placeholder="Full name" [(ngModel)]="formData.name" name="name" />
+      <input placeholder="Email" [(ngModel)]="formData.email" name="email" />
+      <input placeholder="Phone" [(ngModel)]="formData.phone" name="phone" />
+      <input placeholder="Company name" [(ngModel)]="formData.company" name="company" />
+      <input placeholder="Subject" [(ngModel)]="formData.subject" name="subject" />
+      <textarea placeholder="Message" rows="6" [(ngModel)]="formData.message" name="message"></textarea>
+      <button type="submit" [disabled]="loading">{{ loading ? 'Sending...' : 'Send message' }}</button>
       <p class="msg">{{ successMessage }}</p>
+    </form>
 
-    </div>
-
-    <!-- INFO BOX -->
-    <div class="info-box">
-
-      <h3>Get in Touch</h3>
-
+    <aside class="info-box glass-card">
+      <h3>Get in touch</h3>
       <p>📍 1201, Seventh Bliss, Gota, Ahmedabad</p>
       <p>📧 innovancetechlabs@gmail.com</p>
       <p>📞 +91 9725287818</p>
+      <a class="whatsapp" href="https://wa.me/919725287818" target="_blank" rel="noreferrer">Chat on WhatsApp</a>
+    </aside>
+  </section>
 
-      <!-- WhatsApp -->
-      <a class="whatsapp"
-         href="https://wa.me/919725287818"
-         target="_blank">
-        Chat on WhatsApp
-      </a>
-
-    </div>
-
+  <div class="map surface-card">
+    <iframe src="https://www.google.com/maps?q=Seventh%20Bliss%20Gota%20Ahmedabad&output=embed"></iframe>
   </div>
-
-  <!-- MAP -->
-  <div class="map">
-    <iframe
-      src="https://www.google.com/maps?q=Seventh%20Bliss%20Gota%20Ahmedabad&output=embed">
-    </iframe>
-  </div>
-
-</div>
+</main>

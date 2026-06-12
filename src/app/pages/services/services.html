@@ -1,102 +1,43 @@
-<section class="hero">
-
-  <div class="container">
-
-    <span class="tag">
-      OUR SERVICES
-    </span>
-
-    <h1>
-      Technology Solutions
-      Built For Growth
-    </h1>
-
-    <p>
-      We help organizations transform ideas into scalable
-      software solutions using modern technologies and
-      enterprise best practices.
+<main class="page-shell services-page section-pad">
+  <section class="glass-card intro-card">
+    <span class="section-label">Our services</span>
+    <h1 class="section-heading">Technology solutions built for growth.</h1>
+    <p class="section-copy">
+      We help organizations transform ideas into scalable software with a calmer delivery process and more disciplined execution.
     </p>
+  </section>
 
-  </div>
-
-</section>
-
-<section class="services-section">
-
-  <div class="container">
-
+  <section class="section-stack">
     <div class="service-grid">
-
-      <div
-        class="service-card"
-        *ngFor="let service of services">
-
-        <div class="icon">
-          {{service.icon}}
-        </div>
-
-        <h3>
-          {{service.title}}
-        </h3>
-
-        <p>
-          {{service.description}}
-        </p>
-
-      </div>
-
+      @for (service of services; track service.title) {
+        <article class="surface-card service-card">
+          <div class="icon">{{ service.icon }}</div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </article>
+      }
     </div>
+  </section>
 
-  </div>
-
-</section>
-
-<section class="process-section">
-
-  <div class="container">
-
-    <h2>
-      Our Development Process
-    </h2>
+  <section class="section-stack process-section">
+    <div class="section-head">
+      <span class="section-label">Delivery process</span>
+      <h2 class="section-heading">Our development process.</h2>
+    </div>
 
     <div class="process-grid">
-
-      <div
-        class="process-card"
-        *ngFor="let step of process; let i = index">
-
-        <div class="number">
-          0{{i+1}}
-        </div>
-
-        <h3>
-          {{step}}
-        </h3>
-
-      </div>
-
+      @for (step of process; track step; let i = $index) {
+        <article class="surface-card process-card">
+          <span class="number">0{{ i + 1 }}</span>
+          <h3>{{ step }}</h3>
+        </article>
+      }
     </div>
+  </section>
 
-  </div>
-
-</section>
-
-<section class="cta">
-
-  <div class="container">
-
-    <h2>
-      Ready To Build Your Next Solution?
-    </h2>
-
-    <p>
-      Let's discuss how Innovance Techlabs can help your business grow.
-    </p>
-
-    <button class="primary-btn">
-      Contact Us
-    </button>
-
-  </div>
-
-</section>
+  <section class="glass-card cta-card">
+    <h2 class="section-heading">Ready to build your next solution?</h2>
+    <p class="section-copy">Let's discuss how Innovance Techlabs can help your business grow.</p>
+    <a class="cta-button" routerLink="/contact">Contact us</a>
+  </section>
+</main>
